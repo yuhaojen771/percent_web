@@ -36,4 +36,5 @@ if st.button("計算百分比"):
 
 # 清除（用重新載入實作）
 if st.button("🧹 清除所有欄位"):
-    st.experimental_rerun()
+    st.rerun()
+
