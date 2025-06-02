@@ -1,5 +1,4 @@
 import streamlit as st
-import pyperclip
 
 st.title("📊 百分比計算工具")
 
@@ -30,15 +29,11 @@ if st.button("計算百分比"):
                 else:
                     display = f"{percentage:.2f}"
             result = display
-            st.success(f"結果：{result} %")
+            st.success("✅ 計算結果如下（可複製）：")
+            st.code(f"{result} %", language='text')
     except ValueError:
         st.error("❌ 請輸入正確數字")
 
-# 複製按鈕
-if result and st.button("📋 複製結果"):
-    pyperclip.copy(result)
-    st.info("已複製到剪貼簿！")
-
-# 清除
-if st.button("🧹 清除"):
+# 清除（用重新載入實作）
+if st.button("🧹 清除所有欄位"):
     st.experimental_rerun()
